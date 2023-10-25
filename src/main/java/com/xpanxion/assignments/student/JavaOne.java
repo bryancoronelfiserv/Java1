@@ -103,6 +103,7 @@ public class JavaOne {
 
     public void ex6() {
         System.out.println("Student 1: ex6.");
+        
     }
 
     public void ex7() {
