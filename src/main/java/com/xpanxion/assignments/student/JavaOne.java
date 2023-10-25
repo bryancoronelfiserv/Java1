@@ -26,6 +26,7 @@ public class JavaOne {
     }
 
     public void ex2() {
+        System.out.println("Student 1: ex2.");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a string: ");
         String input = scanner.nextLine();
