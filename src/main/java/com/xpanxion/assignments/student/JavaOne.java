@@ -26,7 +26,17 @@ public class JavaOne {
     }
 
     public void ex2() {
-        System.out.println("Student 1: ex2.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        int count = 0;
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if (Character.isUpperCase(c)) count++;
+        }
+        System.out.println("Number of uppercase letters: " + count);
+        scanner.close();
     }
 
     public void ex3() {
