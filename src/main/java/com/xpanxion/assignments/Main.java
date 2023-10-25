@@ -18,6 +18,7 @@ public class Main {
         JavaTwo javaTwo = new JavaTwo();
         //javaTwo.ex11();
         javaTwo.ex12();
+        javaTwo.ex1();
     }
 
     
