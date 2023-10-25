@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.student;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class JavaOne {
@@ -8,7 +9,8 @@ public class JavaOne {
     // Constructors
     //
 
-    public JavaOne() {}
+    public JavaOne() {
+    }
 
     //
     // Public methods
@@ -34,7 +36,8 @@ public class JavaOne {
         int count = 0;
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
-            if (Character.isUpperCase(c)) count++;
+            if (Character.isUpperCase(c))
+                count++;
         }
         System.out.println("Number of uppercase letters: " + count);
         scanner.close();
@@ -62,7 +65,7 @@ public class JavaOne {
 
     public void ex4() {
         System.out.println("Student 1: ex4.");
-        
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a string: ");
         String input = scanner.nextLine();
@@ -70,8 +73,10 @@ public class JavaOne {
         StringBuilder reversed = new StringBuilder(input).reverse();
         String reversedStr = reversed.toString();
 
-        if (input.equalsIgnoreCase(reversedStr)) System.out.println("YES");
-        else System.out.println("NO");
+        if (input.equalsIgnoreCase(reversedStr))
+            System.out.println("YES");
+        else
+            System.out.println("NO");
 
         scanner.close();
     }
@@ -84,15 +89,18 @@ public class JavaOne {
             System.out.print("Enter a string (or 'quit' to exit): ");
             String input = scanner.nextLine();
 
-            if (input.equalsIgnoreCase("quit")) break;
+            if (input.equalsIgnoreCase("quit"))
+                break;
 
             int vowels = 0;
             int consonants = 0;
             for (char c : input.toCharArray()) {
                 if (Character.isLetter(c)) {
                     c = Character.toLowerCase(c);
-                    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') vowels++;
-                    else consonants++;
+                    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+                        vowels++;
+                    else
+                        consonants++;
                 }
             }
             System.out.println("Number of vowels: " + vowels);
@@ -113,6 +121,7 @@ public class JavaOne {
         System.out.println("Result: " + result);
         scanner.close();
     }
+
     public void ex7() {
         System.out.println("Student 1: ex7.");
 
@@ -162,7 +171,8 @@ public class JavaOne {
             System.out.print("Enter room dimensions (width x height) or 'done' to finish: ");
             String input = scanner.next();
 
-            if (input.equalsIgnoreCase("done")) break;
+            if (input.equalsIgnoreCase("done"))
+                break;
 
             // Parse room dimensions
             String[] dimensions = input.split("x");
@@ -189,6 +199,22 @@ public class JavaOne {
 
     public void ex9() {
         System.out.println("Student 1: ex9.");
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int randomNumber = random.nextInt(5) + 1;
+        int userGuess;
+
+        while (true) {
+            System.out.print("Enter a number: ");
+            userGuess = scanner.nextInt();
+
+            if (userGuess == randomNumber) {
+                System.out.println("You guessed it!!!");
+                break;
+            }
+        }
+        scanner.close();
     }
 
     public void ex10() {
