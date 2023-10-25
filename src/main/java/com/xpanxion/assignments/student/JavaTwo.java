@@ -50,4 +50,35 @@ public class JavaTwo {
 
         scanner.close();
     }
+    public static void ex12() {
+        HashMap<Integer, Person> personMap = new HashMap<>();
+        personMap.put(1, new Person(1, "Peter", "Jones"));
+        personMap.put(2, new Person(2, "John", "Smith"));
+        personMap.put(3, new Person(3, "Mary", "Jane"));
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Enter Person ID (or 'done' to finish): ");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("done")) {
+                break;
+            }
+
+            try {
+                int personId = Integer.parseInt(input);
+                Person person = personMap.get(personId);
+
+                if (person != null) {
+                    System.out.println(person);
+                } else {
+                    System.out.println("Person with ID " + personId + " not found.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid person ID.");
+            }
+        }
+        scanner.close();
+    }
 }
