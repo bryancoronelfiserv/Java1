@@ -152,6 +152,39 @@ public class JavaOne {
 
     public void ex8() {
         System.out.println("Student 1: ex8.");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter price per square foot: ");
+        double pricePerSquareFoot = scanner.nextDouble();
+        double totalCost = 0.0;
+
+        while (true) {
+            System.out.print("Enter room dimensions (width x height) or 'done' to finish: ");
+            String input = scanner.next();
+
+            if (input.equalsIgnoreCase("done")) break;
+
+            // Parse room dimensions
+            String[] dimensions = input.split("x");
+            if (dimensions.length != 2) {
+                System.out.println("Invalid input. Please use the format 'width x height'.");
+                continue;
+            }
+
+            try {
+                double width = Double.parseDouble(dimensions[0].trim());
+                double height = Double.parseDouble(dimensions[1].trim());
+
+                // Calculate room area and cost
+                double roomArea = width * height;
+                double roomCost = roomArea * pricePerSquareFoot;
+                totalCost += roomCost;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid number format. Please enter valid dimensions.");
+            }
+        }
+        System.out.printf("Total cost: $%.2f%n", totalCost);
+        scanner.close();
     }
 
     public void ex9() {
