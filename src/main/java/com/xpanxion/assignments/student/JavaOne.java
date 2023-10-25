@@ -115,6 +115,39 @@ public class JavaOne {
     }
     public void ex7() {
         System.out.println("Student 1: ex7.");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        double firstNumber = scanner.nextDouble();
+        System.out.print("Enter the second number: ");
+        double secondNumber = scanner.nextDouble();
+        System.out.print("Enter operation (add, sub, mul, div): ");
+        String operation = scanner.next();
+        double result = 0;
+
+        switch (operation) {
+            case "add":
+                result = firstNumber + secondNumber;
+                break;
+            case "sub":
+                result = firstNumber - secondNumber;
+                break;
+            case "mul":
+                result = firstNumber * secondNumber;
+                break;
+            case "div":
+                if (secondNumber != 0) {
+                    result = firstNumber / secondNumber;
+                } else {
+                    System.out.println("Error: Division by zero.");
+                }
+                break;
+            default:
+                System.out.println("Invalid operation.");
+        }
+
+        System.out.println("Result: " + result);
+        scanner.close();
     }
 
     public void ex8() {

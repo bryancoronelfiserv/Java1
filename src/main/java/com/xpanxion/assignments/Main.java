@@ -4,7 +4,7 @@ import com.xpanxion.assignments.student.JavaOne;
 public class Main {
     public static void main(String[] args) throws Exception {
         JavaOne javaOne = new JavaOne();
-        javaOne.ex1();
+        //javaOne.ex1();
 //        javaOne.ex2();
 //        javaOne.ex3();
 //        javaOne.ex4();
