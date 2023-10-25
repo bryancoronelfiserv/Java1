@@ -42,6 +42,22 @@ public class JavaOne {
 
     public void ex3() {
         System.out.println("Student 1: ex3.");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        String[] words = input.split(" "); // Split the input into words
+
+        for (int i = 0; i < words.length; i++) {
+            if (i % 2 == 0) {
+                words[i] = words[i].toUpperCase(); // Capitalize every other word
+            }
+        }
+
+        String result = String.join(" ", words); // Join the words back into a string
+        System.out.println(result);
+        scanner.close();
     }
 
     public void ex4() {
