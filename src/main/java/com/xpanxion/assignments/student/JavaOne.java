@@ -78,6 +78,27 @@ public class JavaOne {
 
     public void ex5() {
         System.out.println("Student 1: ex5.");
+
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter a string (or 'quit' to exit): ");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("quit")) break;
+
+            int vowels = 0;
+            int consonants = 0;
+            for (char c : input.toCharArray()) {
+                if (Character.isLetter(c)) {
+                    c = Character.toLowerCase(c);
+                    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') vowels++;
+                    else consonants++;
+                }
+            }
+            System.out.println("Number of vowels: " + vowels);
+            System.out.println("Number of consonants: " + consonants);
+        }
+        scanner.close();
     }
 
     public void ex6() {
