@@ -62,6 +62,18 @@ public class JavaOne {
 
     public void ex4() {
         System.out.println("Student 1: ex4.");
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        StringBuilder reversed = new StringBuilder(input).reverse();
+        String reversedStr = reversed.toString();
+
+        if (input.equalsIgnoreCase(reversedStr)) System.out.println("YES");
+        else System.out.println("NO");
+
+        scanner.close();
     }
 
     public void ex5() {
