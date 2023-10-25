@@ -103,9 +103,16 @@ public class JavaOne {
 
     public void ex6() {
         System.out.println("Student 1: ex6.");
-        
-    }
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        int firstNumber = scanner.nextInt();
+        System.out.print("Enter the second number: ");
+        int secondNumber = scanner.nextInt();
+        int result = firstNumber + secondNumber;
+        System.out.println("Result: " + result);
+        scanner.close();
+    }
     public void ex7() {
         System.out.println("Student 1: ex7.");
     }
