@@ -3,7 +3,9 @@ package com.xpanxion.assignments.student;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.text.NumberFormat;
 import java.util.Scanner;
 import java.util.Collections;
@@ -157,6 +159,25 @@ public class JavaTwo {
 
         for (Person p : filteredList) {
             System.out.println(p);
+        }
+    }
+
+    public static void ex20() {
+        Queue<Cat> catQueue = new LinkedList<>();
+        catQueue.offer(new Cat("Alice"));
+        catQueue.offer(new Cat("Bob"));
+        catQueue.offer(new Cat("Charlie"));
+        catQueue.offer(new Cat("Dan"));
+
+        while (!catQueue.isEmpty()) {
+            System.out.println(catQueue);
+            catQueue.poll(); // Remove the first cat from the queue
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                // Handle or log the exception
+                e.printStackTrace();
+            }
         }
     }
 }
