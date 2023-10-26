@@ -93,4 +93,10 @@ public class JavaTwo {
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
+        public static void ex14() {
+            ex13();
+        }
+        public static void ex15() {
+        }
+
 }
