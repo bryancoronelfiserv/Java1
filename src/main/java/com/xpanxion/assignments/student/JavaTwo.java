@@ -145,4 +145,18 @@ public class JavaTwo {
             System.out.println(p);
         }
     }
+
+    public static void ex19() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson"));
+        List<Person> filteredList = personList.stream()
+                .filter(person -> "Smith".equals(person.getLastName()))
+                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+
+        for (Person p : filteredList) {
+            System.out.println(p);
+        }
+    }
 }

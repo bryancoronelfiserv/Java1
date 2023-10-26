@@ -22,4 +22,8 @@ public class Person {
     {
         return this.firstName;
     }
+    public String getLastName()
+    {
+        return this.lastName;
+    }
 }
