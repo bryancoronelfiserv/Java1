@@ -1,10 +1,15 @@
 package com.xpanxion.assignments.student;
-//hi
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.text.NumberFormat;
 import java.util.Scanner;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class JavaTwo {
 
@@ -51,6 +56,7 @@ public class JavaTwo {
 
         scanner.close();
     }
+
     public static void ex12() {
         HashMap<Integer, Person> personMap = new HashMap<>();
         personMap.put(1, new Person(1, "Peter", "Jones"));
@@ -81,5 +87,97 @@ public class JavaTwo {
             }
         }
         scanner.close();
+    }
+
+    public static void ex13() {
+        var invoice = new Invoice(1);
+        invoice.addProduct(new Product(111, "Mustard", 2.00));
+        invoice.addProduct(new Product(222, "Ketchup", 3.00));
+        invoice.addProduct(new Product(333, "Franks Hot Sauce", 4.00));
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
+    }
+
+    public static void ex14() {
+        ex13();
+    }
+
+    public static void ex15() {
+        var repository = new Repository();
+        var p = repository.getPerson();
+        System.out.println(p);
+    }
+
+    public static void ex16() {
+        Calculator calculator = new Calculator();
+        calculator.calculate();
+    }
+
+    public static void ex17() {
+        List<Person> personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson"));
+
+        // Use stream and map to replace the last name
+        List<Person> newPersonList = personList.stream()
+                .map(person -> {
+                    person.setLastName("xxx");
+                    return person;
+                })
+                .toList();
+
+        // Display the updated list
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
+
+    public static void ex18() {
+        List<Person> personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson"));
+
+        // Sort the personList by first name
+        Collections.sort(personList, Comparator.comparing(Person::getFirstName));
+
+        for (Person p : personList) {
+            System.out.println(p);
+        }
+    }
+
+    public static void ex19() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson"));
+        List<Person> filteredList = personList.stream()
+                .filter(person -> "Smith".equals(person.getLastName()))
+                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+
+        for (Person p : filteredList) {
+            System.out.println(p);
+        }
+    }
+
+    public static void ex20() {
+        Queue<Cat> catQueue = new LinkedList<>();
+        catQueue.offer(new Cat("Alice"));
+        catQueue.offer(new Cat("Bob"));
+        catQueue.offer(new Cat("Charlie"));
+        catQueue.offer(new Cat("Dan"));
+
+        while (!catQueue.isEmpty()) {
+            System.out.println(catQueue);
+            catQueue.poll(); // Remove the first cat from the queue
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                // Handle or log the exception
+                e.printStackTrace();
+            }
+        }
     }
 }

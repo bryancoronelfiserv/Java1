@@ -15,4 +15,15 @@ public class Person {
     public String toString() {
         return "Person{id=" + id + ", firstName='" + firstName + "', lastName='" + lastName + "'}";
     }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public String getFirstName()
+    {
+        return this.firstName;
+    }
+    public String getLastName()
+    {
+        return this.lastName;
+    }
 }
