@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.text.NumberFormat;
 import java.util.Scanner;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class JavaTwo {
 
@@ -126,6 +128,20 @@ public class JavaTwo {
 
         // Display the updated list
         for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
+
+    public static void ex18() {
+        List<Person> personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson"));
+
+        // Sort the personList by first name
+        Collections.sort(personList, Comparator.comparing(Person::getFirstName));
+
+        for (Person p : personList) {
             System.out.println(p);
         }
     }
