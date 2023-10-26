@@ -103,5 +103,10 @@ public class JavaTwo {
         var p = repository.getPerson();
         System.out.println(p);
     }
+    public static void ex16()
+    {
+        Calculator calculator = new Calculator();
+        calculator.calculate();
+    }
 
 }
