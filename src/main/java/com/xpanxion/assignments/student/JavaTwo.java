@@ -1,9 +1,9 @@
 package com.xpanxion.assignments.student;
-//hi
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class JavaTwo {
@@ -51,6 +51,7 @@ public class JavaTwo {
 
         scanner.close();
     }
+
     public static void ex12() {
         HashMap<Integer, Person> personMap = new HashMap<>();
         personMap.put(1, new Person(1, "Peter", "Jones"));
@@ -81,5 +82,15 @@ public class JavaTwo {
             }
         }
         scanner.close();
+    }
+
+    public static void ex13() {
+        var invoice = new Invoice(1);
+        invoice.addProduct(new Product(111, "Mustard", 2.00));
+        invoice.addProduct(new Product(222, "Ketchup", 3.00));
+        invoice.addProduct(new Product(333, "Franks Hot Sauce", 4.00));
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 }
