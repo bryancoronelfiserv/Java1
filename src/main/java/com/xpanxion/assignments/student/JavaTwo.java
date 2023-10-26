@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.student;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.text.NumberFormat;
@@ -103,10 +104,29 @@ public class JavaTwo {
         var p = repository.getPerson();
         System.out.println(p);
     }
-    public static void ex16()
-    {
+
+    public static void ex16() {
         Calculator calculator = new Calculator();
         calculator.calculate();
     }
 
+    public static void ex17() {
+        List<Person> personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson"));
+
+        // Use stream and map to replace the last name
+        List<Person> newPersonList = personList.stream()
+                .map(person -> {
+                    person.setLastName("xxx");
+                    return person;
+                })
+                .toList();
+
+        // Display the updated list
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
 }
